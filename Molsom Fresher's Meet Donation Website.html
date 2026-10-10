@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molsom Fresher's Meet 2026 - Donation Campaign</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+    <!-- html2pdf.js for generating instant printable receipts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        molsom: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            500: '#d97706',
+                            600: '#b45309',
+                            800: '#78350f',
+                            900: '#451a03',
+                        },
+                        tealish: {
+                            500: '#0d9488',
+                            700: '#0f766e',
+                            900: '#134e4a',
+                        },
+                        maroon: {
+                            600: '#9f1239',
+                            800: '#881337',
+                            900: '#4c0519',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-banner {
+            background: linear-gradient(135deg, rgba(76, 5, 25, 0.95) 0%, rgba(19, 78, 74, 0.9) 50%, rgba(69, 26, 3, 0.95) 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .pattern-overlay {
+            background-image: radial-gradient(rgba(217, 119, 6, 0.15) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d97706;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md shadow-sm border-b border-amber-100 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-amber-500 to-maroon-800 flex items-center justify-center text-white font-bold text-xl shadow-md border-2 border-amber-300">
+                    <i class="fa-solid font-serif">M</i>
+                </div>
+                <div>
+                    <span class="text-xl font-bold tracking-tight text-slate-900 block leading-tight">MOLSOM YOUTH UNION</span>
+                    <span class="text-xs text-amber-700 font-medium tracking-wide uppercase">Annual Fresher's Welcome 2026</span>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-slate-700">
+                <a href="#about" class="hover:text-amber-600 transition">About Event</a>
+                <a href="#budget" class="hover:text-amber-600 transition">Fund Usage</a>
+                <a href="#donors" class="hover:text-amber-600 transition">Supporter Wall</a>
+                <a href="#schedule" class="hover:text-amber-600 transition">Schedule</a>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <button onclick="openDonationModal()" class="bg-gradient-to-r from-amber-500 to-maroon-800 hover:from-amber-600 hover:to-maroon-900 text-white font-semibold px-5 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 flex items-center space-x-2 text-sm">
+                    <i class="fa-solid fa-heart text-amber-300 animate-pulse"></i>
+                    <span>Donate Now</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative bg-slate-900 text-white overflow-hidden py-16 lg:py-24 pattern-overlay">
+        <div class="absolute inset-0 gradient-banner opacity-95"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-amber-500/20 border border-amber-400/30 px-4 py-1.5 rounded-full text-amber-300 text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-sparkles"></i>
+                        <span>Celebrating Culture, Unity & Excellence</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-extrabold tracking-tight text-white leading-tight">
+                        Welcoming the Bright Stars of <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-200 to-teal-200">Molsom Community 2026</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-200 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Join us in hosting an unforgettable welcome meet for our incoming university and college freshers. Your generous contributions empower student talents, preserve traditional heritage, and build a stronger community bond.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <button onclick="openDonationModal()" class="w-full sm:w-auto px-8 py-3.5 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold rounded-xl shadow-lg shadow-amber-500/25 transition-all text-base flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-hand-holding-heart text-lg"></i>
+                            <span>Contribute Today</span>
+                        </button>
+                        <a href="#about" class="w-full sm:w-auto px-8 py-3.5 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold rounded-xl backdrop-blur-sm transition-all text-base text-center">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Campaign Progress Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white text-slate-900 rounded-3xl p-6 sm:p-8 shadow-2xl border border-amber-100 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-amber-100 rounded-full blur-2xl -z-0 opacity-60"></div>
+                        
+                        <div class="relative z-10 space-y-6">
+                            <div class="flex justify-between items-end border-b border-slate-100 pb-4">
+                                <div>
+                                    <span class="text-xs font-semibold uppercase tracking-wider text-slate-500 block">Total Raised</span>
+                                    <span id="display-raised-amount" class="text-3xl sm:text-4xl font-extrabold text-slate-900">₹0</span>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-xs font-semibold uppercase tracking-wider text-slate-500 block">Target Goal</span>
+                                    <span id="display-target-amount" class="text-xl sm:text-2xl font-bold text-amber-700">₹60,000</span>
+                                </div>
+                            </div>
+
+                            <!-- Progress Bar -->
+                            <div>
+                                <div class="flex justify-between text-xs font-bold text-slate-600 mb-2">
+                                    <span>Campaign Progress</span>
+                                    <span id="display-percentage">0%</span>
+                                </div>
+                                <div class="w-full bg-slate-100 rounded-full h-4 overflow-hidden p-0.5 border border-slate-200">
+                                    <div id="progress-bar" class="bg-gradient-to-r from-amber-500 to-maroon-600 h-full rounded-full transition-all duration-1000 ease-out w-0"></div>
+                                </div>
+                            </div>
+
+                            <!-- Quick Stats Grid -->
+                            <div class="grid grid-cols-3 gap-3 text-center py-2 bg-slate-50 rounded-2xl p-3 border border-slate-100">
+                                <div>
+                                    <span id="display-donors-count" class="block font-bold text-lg text-slate-900">0</span>
+                                    <span class="text-[11px] text-slate-500 font-medium">Donors</span>
+                                </div>
+                                <div class="border-x border-slate-200">
+                                    <span id="display-days-left" class="block font-bold text-lg text-slate-900">12</span>
+                                    <span class="text-[11px] text-slate-500 font-medium">Days Left</span>
+                                </div>
+                                <div>
+                                    <span class="block font-bold text-lg text-teal-700">100%</span>
+                                    <span class="text-[11px] text-slate-500 font-medium">Transparent</span>
+                                </div>
+                            </div>
+
+                            <!-- Quick Tier Buttons -->
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Quick Donate</label>
+                                <div class="grid grid-cols-4 gap-2">
+                                    <button onclick="quickDonate(200)" class="py-2 px-1 text-xs font-bold rounded-lg border border-amber-200 bg-amber-50 text-amber-800 hover:bg-amber-500 hover:text-white transition">₹200</button>
+                                    <button onclick="quickDonate(500)" class="py-2 px-1 text-xs font-bold rounded-lg border border-amber-200 bg-amber-50 text-amber-800 hover:bg-amber-500 hover:text-white transition">₹500</button>
+                                    <button onclick="quickDonate(1000)" class="py-2 px-1 text-xs font-bold rounded-lg border border-amber-200 bg-amber-50 text-amber-800 hover:bg-amber-500 hover:text-white transition">₹1000</button>
+                                    <button onclick="quickDonate(2000)" class="py-2 px-1 text-xs font-bold rounded-lg border border-amber-200 bg-amber-50 text-amber-800 hover:bg-amber-500 hover:text-white transition">₹2000</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-amber-600 uppercase tracking-widest mb-2">About The Event</h2>
+                <h3 class="text-3xl sm:text-4xl font-serif font-bold text-slate-900">Why Your Support Matters</h3>
+                <p class="text-slate-600 mt-4 leading-relaxed">
+                    The Molsom Fresher's Meet brings together students, leaders, elders, and alumni to honor our new batch entering higher education in Agartala. Your contributions directly cover logistics, awards, and student support.
+                </p>
+            </div>
+
+            <div id="budget" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all group">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-xl flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2">Community Feast & Refreshments</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Traditional cuisine lunch & tea session for over 300+ students and guests.</p>
+                    <span class="inline-block bg-amber-50 text-amber-800 border border-amber-200 text-xs font-bold px-2.5 py-1 rounded-md">Allocated: ~40%</span>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all group">
+                    <div class="w-12 h-12 bg-teal-100 text-teal-700 rounded-xl flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-music"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2">Cultural & Talent Shows</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Stage setup, sound equipment, traditional costume rentals, and dance performances.</p>
+                    <span class="inline-block bg-teal-50 text-teal-800 border border-teal-200 text-xs font-bold px-2.5 py-1 rounded-md">Allocated: ~25%</span>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all group">
+                    <div class="w-12 h-12 bg-maroon-100 text-maroon-700 rounded-xl flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2">Fresher Kits & Awards</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Welcome stationery packages, mementos for toppers, Mr. & Miss Fresher trophies.</p>
+                    <span class="inline-block bg-maroon-50 text-maroon-800 border border-maroon-200 text-xs font-bold px-2.5 py-1 rounded-md">Allocated: ~20%</span>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all group">
+                    <div class="w-12 h-12 bg-purple-100 text-purple-700 rounded-xl flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2">Venue & Decorations</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Auditorium booking fee, lighting, banners, welcome arches, and photography setup.</p>
+                    <span class="inline-block bg-purple-50 text-purple-800 border border-purple-200 text-xs font-bold px-2.5 py-1 rounded-md">Allocated: ~15%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="donors" class="py-16 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                <div>
+                    <h2 class="text-xs font-bold text-amber-600 uppercase tracking-widest mb-2">Live Donor Wall</h2>
+                    <h3 class="text-3xl font-serif font-bold text-slate-900">Thank You To Our Contributors</h3>
+                </div>
+
+                <!-- Donor Filter Tabs -->
+                <div class="mt-4 md:mt-0 flex flex-wrap gap-2">
+                    <button onclick="filterDonors('all')" class="donor-filter-btn active-filter px-4 py-1.5 rounded-full text-xs font-bold bg-amber-500 text-slate-950 shadow-sm" data-filter="all">All Supporters</button>
+                    <button onclick="filterDonors('Alumni')" class="donor-filter-btn px-4 py-1.5 rounded-full text-xs font-bold bg-white text-slate-600 hover:bg-slate-200 border border-slate-200" data-filter="Alumni">Alumni</button>
+                    <button onclick="filterDonors('Well Wisher')" class="donor-filter-btn px-4 py-1.5 rounded-full text-xs font-bold bg-white text-slate-600 hover:bg-slate-200 border border-slate-200" data-filter="Well Wisher">Well Wishers</button>
+                    <button onclick="filterDonors('Student')" class="donor-filter-btn px-4 py-1.5 rounded-full text-xs font-bold bg-white text-slate-600 hover:bg-slate-200 border border-slate-200" data-filter="Student">Students</button>
+                </div>
+            </div>
+
+            <!-- Donor Wall Grid -->
+            <div id="donor-wall-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-bold text-amber-600 uppercase tracking-widest block">Event Schedule</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-900">Join Us Live On Main Event Day</h2>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Experience authentic cultural music, traditional dances, poetry, inspiring alumni keynote speeches, and the prestigious Mr. & Miss Fresher competition.
+                    </p>
+
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-location-dot text-amber-600 text-lg mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Venue Location</h4>
+                                <p class="text-slate-600 text-sm">Sukanta Academy Auditorium / Town Hall, Agartala, Tripura</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3 border-t border-slate-200 pt-3">
+                            <i class="fa-solid fa-calendar-days text-amber-600 text-lg mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Date & Time</h4>
+                                <p class="text-slate-600 text-sm">Sunday, November 15, 2026 | Starts at 10:00 AM IST</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="space-y-4">
+                        <!-- Timeline Item 1 -->
+                        <div class="flex items-start space-x-4 p-4 rounded-2xl border border-slate-100 bg-slate-50 hover:bg-amber-50/50 transition">
+                            <span class="px-3 py-1 bg-amber-500 text-slate-950 font-bold text-xs rounded-lg whitespace-nowrap">10:00 AM</span>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Welcome Reception & Registration</h4>
+                                <p class="text-slate-600 text-xs mt-1">Fresher registration, badge distribution, and traditional welcome drink.</p>
+                            </div>
+                        </div>
+                        <!-- Timeline Item 2 -->
+                        <div class="flex items-start space-x-4 p-4 rounded-2xl border border-slate-100 bg-slate-50 hover:bg-amber-50/50 transition">
+                            <span class="px-3 py-1 bg-amber-500 text-slate-950 font-bold text-xs rounded-lg whitespace-nowrap">11:30 AM</span>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Cultural Inauguration & Traditional Dance</h4>
+                                <p class="text-slate-600 text-xs mt-1">Lamp lighting, Molsom cultural songs, and tribal dance showcase.</p>
+                            </div>
+                        </div>
+                        <!-- Timeline Item 3 -->
+                        <div class="flex items-start space-x-4 p-4 rounded-2xl border border-slate-100 bg-slate-50 hover:bg-amber-50/50 transition">
+                            <span class="px-3 py-1 bg-amber-500 text-slate-950 font-bold text-xs rounded-lg whitespace-nowrap">01:30 PM</span>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Community Grand Feast</h4>
+                                <p class="text-slate-600 text-xs mt-1">Delighting in traditional dishes together with freshers and elders.</p>
+                            </div>
+                        </div>
+                        <!-- Timeline Item 4 -->
+                        <div class="flex items-start space-x-4 p-4 rounded-2xl border border-slate-100 bg-slate-50 hover:bg-amber-50/50 transition">
+                            <span class="px-3 py-1 bg-amber-500 text-slate-950 font-bold text-xs rounded-lg whitespace-nowrap">03:00 PM</span>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Mr. & Miss Fresher Contest & Felicitation</h4>
+                                <p class="text-slate-600 text-xs mt-1">Ramp walk, talent round, Q&A, felicitations, and closing music jam.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="donation-modal" class="fixed inset-0 z-50 hidden bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-xl w-full shadow-2xl overflow-hidden border border-amber-100 my-8 transition-all transform scale-95 opacity-0 duration-300" id="modal-card">
+            
+            <!-- Modal Header -->
+            <div class="bg-gradient-to-r from-amber-700 via-maroon-800 to-slate-900 text-white p-6 relative">
+                <button onclick="closeDonationModal()" class="absolute top-5 right-5 text-white/80 hover:text-white w-8 h-8 rounded-full bg-white/10 flex items-center justify-center transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="flex items-center space-x-2 text-amber-300 text-xs font-bold uppercase tracking-wider mb-1">
+                    <i class="fa-solid fa-shield-heart"></i>
+                    <span>Secure Donation Portal</span>
+                </div>
+                <h3 class="text-2xl font-serif font-bold">Support Molsom Freshers</h3>
+                <p class="text-slate-200 text-xs mt-1">Your small contribution makes a huge difference!</p>
+            </div>
+
+            <form id="donation-form" onsubmit="handleDonationSubmit(event)" class="p-6 space-y-6">
+                <!-- Step 1: Tier Selection -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-3">1. Select Donation Amount</label>
+                    <div class="grid grid-cols-3 sm:grid-cols-5 gap-2 mb-3">
+                        <button type="button" onclick="selectTier(200, this)" class="tier-btn py-2.5 rounded-xl border border-slate-200 font-bold text-slate-700 hover:border-amber-500 hover:bg-amber-50 transition text-sm">₹200</button>
+                        <button type="button" onclick="selectTier(500, this)" class="tier-btn py-2.5 rounded-xl border border-slate-200 font-bold text-slate-700 hover:border-amber-500 hover:bg-amber-50 transition text-sm">₹500</button>
+                        <button type="button" onclick="selectTier(1000, this)" class="tier-btn active-tier bg-amber-500 text-slate-950 font-bold py-2.5 rounded-xl border border-amber-500 shadow-sm transition text-sm">₹1000</button>
+                        <button type="button" onclick="selectTier(2000, this)" class="tier-btn py-2.5 rounded-xl border border-slate-200 font-bold text-slate-700 hover:border-amber-500 hover:bg-amber-50 transition text-sm">₹2000</button>
+                        <button type="button" onclick="selectTier('custom', this)" class="tier-btn py-2.5 rounded-xl border border-slate-200 font-bold text-slate-700 hover:border-amber-500 hover:bg-amber-50 transition text-sm">Custom</button>
+                    </div>
+                    
+                    <div id="custom-amount-wrapper" class="hidden">
+                        <div class="relative">
+                            <span class="absolute left-3 top-2.5 text-slate-400 font-bold">₹</span>
+                            <input type="number" id="custom-amount-input" min="10" placeholder="Enter custom amount" class="w-full pl-8 pr-4 py-2 border border-amber-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:outline-none text-slate-800 font-bold">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Donor Details -->
+                <div class="space-y-4">
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">2. Donor Information</label>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-600 mb-1">Full Name *</label>
+                            <input type="text" id="donor-name" required placeholder="e.g. Samuel Molsom" class="w-full px-3.5 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-600 mb-1">Phone Number / WhatsApp</label>
+                            <input type="tel" id="donor-phone" placeholder="9876543210" class="w-full px-3.5 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-600 mb-1">Your Identity Badge *</label>
+                            <select id="donor-category" required class="w-full px-3.5 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm bg-white">
+                                <option value="Well Wisher">Well Wisher</option>
+                                <option value="Alumni">Alumni</option>
+                                <option value="Student">Senior Student</option>
+                                <option value="Community Leader">Community Leader</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-600 mb-1">Email Address (Optional)</label>
+                            <input type="email" id="donor-email" placeholder="samuel@gmail.com" class="w-full px-3.5 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-medium text-slate-600 mb-1">Encouraging Message / Blessing</label>
+                        <textarea id="donor-message" rows="2" placeholder="Best wishes to all our freshers! Succeed in your studies..." class="w-full px-3.5 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm"></textarea>
+                    </div>
+                </div>
+
+                <!-- Step 3: Payment Details -->
+                <div class="bg-amber-50/60 rounded-2xl p-4 border border-amber-200/80 space-y-4">
+                    <label class="block text-xs font-bold text-amber-900 uppercase tracking-wider">3. Bank Transfer & UPI Details</label>
+                    
+                    <div class="flex flex-col sm:flex-row items-center gap-4 bg-white p-3 rounded-xl border border-amber-100">
+                        <div class="w-28 h-28 bg-slate-100 rounded-lg border flex flex-col items-center justify-center text-center p-2">
+                            <!-- Dynamic QR preview -->
+                            <i class="fa-solid fa-qrcode text-4xl text-slate-800"></i>
+                            <span class="text-[9px] font-bold text-slate-500 mt-1">Scan via GPay / PhonePe / Paytm</span>
+                        </div>
+                        <div class="text-xs space-y-1.5 flex-1 w-full">
+                            <div class="flex justify-between border-b pb-1">
+                                <span class="text-slate-500">UPI ID:</span>
+                                <span class="font-bold text-slate-800 select-all">molsom.youth@upi</span>
+                            </div>
+                            <div class="flex justify-between border-b pb-1">
+                                <span class="text-slate-500">Bank Name:</span>
+                                <span class="font-semibold text-slate-800">State Bank of India</span>
+                            </div>
+                            <div class="flex justify-between border-b pb-1">
+                                <span class="text-slate-500">Account No:</span>
+                                <span class="font-bold text-slate-800 tracking-wide select-all">39820100452</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-500">IFSC Code:</span>
+                                <span class="font-bold text-slate-800 select-all">SBIN0000022</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-medium text-slate-700 mb-1">Transaction Ref / UTR No. *</label>
+                        <input type="text" id="transaction-id" required placeholder="Enter 12-digit UTR or transaction ID after payment" class="w-full px-3.5 py-2 border border-amber-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm font-mono">
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <button type="button" onclick="closeDonationModal()" class="w-1/3 py-3 border border-slate-300 rounded-xl text-slate-700 font-semibold hover:bg-slate-100 transition text-sm">Cancel</button>
+                    <button type="submit" class="w-2/3 py-3 bg-gradient-to-r from-amber-500 to-maroon-800 hover:from-amber-600 hover:to-maroon-900 text-white font-bold rounded-xl shadow-lg transition text-sm flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>Confirm Donation</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="receipt-modal" class="fixed inset-0 z-50 hidden bg-slate-900/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-lg w-full shadow-2xl overflow-hidden my-8">
+            <div class="p-6 space-y-6">
+                <!-- Printable Receipt Content Area -->
+                <div id="printable-receipt" class="p-6 bg-slate-50 border-2 border-dashed border-amber-300 rounded-2xl relative space-y-4">
+                    <div class="flex justify-between items-start border-b border-slate-200 pb-4">
+                        <div>
+                            <span class="text-[10px] uppercase font-bold tracking-widest text-amber-700 block">OFFICIAL DONATION RECEIPT</span>
+                            <h3 class="text-lg font-serif font-bold text-slate-900">Molsom Fresher's Meet 2026</h3>
+                            <p class="text-[11px] text-slate-500">Organized by Molsom Youth & Student Union</p>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-amber-500 text-slate-950 font-extrabold flex items-center justify-center text-sm shadow">
+                            M
+                        </div>
+                    </div>
+
+                    <div class="text-center py-2 bg-amber-100/60 rounded-xl border border-amber-200">
+                        <span class="text-xs text-amber-800 font-medium block">Amount Received with Thanks</span>
+                        <span id="receipt-amount" class="text-3xl font-extrabold text-amber-900">₹0</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2 text-xs">
+                        <div>
+                            <span class="text-slate-500 block">Receipt No:</span>
+                            <span id="receipt-no" class="font-mono font-bold text-slate-800">#MSM-0000</span>
+                        </div>
+                        <div>
+                            <span class="text-slate-500 block">Date & Time:</span>
+                            <span id="receipt-date" class="font-medium text-slate-800">--</span>
+                        </div>
+                        <div>
+                            <span class="text-slate-500 block">Donor Name:</span>
+                            <span id="receipt-donor" class="font-bold text-slate-800">--</span>
+                        </div>
+                        <div>
+                            <span class="text-slate-500 block">Identity Badge:</span>
+                            <span id="receipt-badge" class="font-medium text-amber-700">--</span>
+                        </div>
+                        <div class="col-span-2">
+                            <span class="text-slate-500 block">Transaction UTR/ID:</span>
+                            <span id="receipt-utr" class="font-mono text-slate-800">--</span>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-slate-200 pt-3">
+                        <p id="receipt-message-display" class="text-xs italic text-slate-600 bg-white p-2.5 rounded-lg border border-slate-200">"Thank you for your generous contribution!"</p>
+                    </div>
+
+                    <div class="flex justify-between items-center text-[10px] text-slate-400 pt-2 border-t border-slate-100">
+                        <span>Verified Digital Copy</span>
+                        <span>Agartala, Tripura</span>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <button onclick="downloadReceiptPDF()" class="flex-1 py-3 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold rounded-xl shadow transition text-sm flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-download"></i>
+                        <span>Download PDF Receipt</span>
+                    </button>
+                    <button onclick="closeReceiptModal()" class="py-3 px-6 bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold rounded-xl transition text-sm">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 hidden bg-slate-900 text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center space-x-3 border border-slate-700 transition-all">
+        <i class="fa-solid fa-circle-check text-amber-400 text-lg"></i>
+        <span id="toast-message" class="text-xs font-semibold">Action completed successfully!</span>
+    </div>
+
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-amber-500 text-slate-950 font-bold flex items-center justify-center text-lg">
+                        M
+                    </div>
+                    <div>
+                        <span class="text-white font-bold block">Molsom Fresher's Meet 2026</span>
+                        <span class="text-xs text-slate-500">Uniting and empowering student youth across Tripura</span>
+                    </div>
+                </div>
+
+                <div class="flex space-x-6 text-sm">
+                    <a href="#about" class="hover:text-amber-400 transition">About Campaign</a>
+                    <a href="#budget" class="hover:text-amber-400 transition">Budget Breakdown</a>
+                    <a href="#donors" class="hover:text-amber-400 transition">Donors List</a>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+                <p>&copy; 2026 Molsom Student & Youth Union. All Rights Reserved.</p>
+                <p class="flex items-center space-x-1">
+                    <span>Made with</span>
+                    <i class="fa-solid fa-heart text-amber-500"></i>
+                    <span>for the Molsom Community</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initial Campaign Data State
+        const campaignState = {
+            targetGoal: 60000,
+            raisedAmount: 28500,
+            donors: [
+                {
+                    name: "Dr. B. Molsom",
+                    amount: 5000,
+                    badge: "Alumni",
+                    message: "Proud to support our new students entering higher studies!",
+                    date: "2026-10-08"
+                },
+                {
+                    name: "Raju Molsom",
+                    amount: 2000,
+                    badge: "Well Wisher",
+                    message: "Wishing a great and successful fresher's event.",
+                    date: "2026-10-09"
+                },
+                {
+                    name: "Anita & Friends",
+                    amount: 1500,
+                    badge: "Student",
+                    message: "Super excited for the cultural dance performances!",
+                    date: "2026-10-10"
+                },
+                {
+                    name: "K. Molsom (Ex-President)",
+                    amount: 10000,
+                    badge: "Alumni",
+                    message: "Keep our traditional culture alive. All the best youth team!",
+                    date: "2026-10-05"
+                },
+                {
+                    name: "James Molsom",
+                    amount: 1000,
+                    badge: "Well Wisher",
+                    message: "Great initiative by the organizing committee.",
+                    date: "2026-10-07"
+                }
+            ]
+        };
+
+        let selectedAmount = 1000;
+        let activeFilter = 'all';
+
+        // Load local state if saved
+        function initApp() {
+            const savedState = localStorage.getItem('molsom_donation_state');
+            if (savedState) {
+                try {
+                    const parsed = JSON.parse(savedState);
+                    campaignState.raisedAmount = parsed.raisedAmount || campaignState.raisedAmount;
+                    campaignState.donors = parsed.donors || campaignState.donors;
+                } catch (e) {
+                    console.error("Error loading stored data", e);
+                }
+            }
+            updateCampaignUI();
+            renderDonorWall();
+        }
+
+        // Save state to local storage
+        function saveState() {
+            localStorage.setItem('molsom_donation_state', JSON.stringify({
+                raisedAmount: campaignState.raisedAmount,
+                donors: campaignState.donors
+            }));
+        }
+
+        // Update Progress Bar and Numbers
+        function updateCampaignUI() {
+            const percentage = Math.min(100, Math.round((campaignState.raisedAmount / campaignState.targetGoal) * 100));
+            
+            document.getElementById('display-raised-amount').innerText = '₹' + campaignState.raisedAmount.toLocaleString('en-IN');
+            document.getElementById('display-target-amount').innerText = '₹' + campaignState.targetGoal.toLocaleString('en-IN');
+            document.getElementById('display-percentage').innerText = percentage + '%';
+            document.getElementById('progress-bar').style.width = percentage + '%';
+            document.getElementById('display-donors-count').innerText = campaignState.donors.length;
+        }
+
+        // Render Donor Wall Cards
+        function renderDonorWall() {
+            const container = document.getElementById('donor-wall-container');
+            container.innerHTML = '';
+
+            const filteredDonors = activeFilter === 'all' 
+                ? campaignState.donors 
+                : campaignState.donors.filter(d => d.badge === activeFilter);
+
+            if (filteredDonors.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full text-center py-12 bg-white rounded-2xl border border-dashed border-slate-200">
+                        <i class="fa-solid fa-heart-crack text-slate-300 text-3xl mb-2"></i>
+                        <p class="text-slate-500 text-sm">No contributors found under this category yet.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filteredDonors.forEach(donor => {
+                let badgeStyle = "bg-amber-100 text-amber-800 border-amber-200";
+                if (donor.badge === 'Alumni') badgeStyle = "bg-maroon-100 text-maroon-800 border-maroon-200";
+                if (donor.badge === 'Student') badgeStyle = "bg-teal-100 text-teal-800 border-teal-200";
+
+                const card = document.createElement('div');
+                card.className = "bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition space-y-3 flex flex-col justify-between";
+                card.innerHTML = `
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-bold text-slate-900">${escapeHtml(donor.name)}</h4>
+                                <span class="inline-block text-[10px] font-bold px-2 py-0.5 rounded-md border ${badgeStyle} mt-1">${escapeHtml(donor.badge)}</span>
+                            </div>
+                            <span class="font-extrabold text-amber-700 text-base">₹${donor.amount.toLocaleString('en-IN')}</span>
+                        </div>
+                        <p class="text-slate-600 text-xs italic bg-slate-50 p-2.5 rounded-xl border border-slate-100">"${escapeHtml(donor.message || 'Supporting the youth event!')}"</p>
+                    </div>
+                    <div class="text-[10px] text-slate-400 text-right pt-1 border-t border-slate-50">
+                        ${donor.date || 'Recent Donor'}
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Filter Donors Tag Click
+        function filterDonors(category) {
+            activeFilter = category;
+            document.querySelectorAll('.donor-filter-btn').forEach(btn => {
+                if (btn.dataset.filter === category) {
+                    btn.className = "donor-filter-btn active-filter px-4 py-1.5 rounded-full text-xs font-bold bg-amber-500 text-slate-950 shadow-sm";
+                } else {
+                    btn.className = "donor-filter-btn px-4 py-1.5 rounded-full text-xs font-bold bg-white text-slate-600 hover:bg-slate-200 border border-slate-200";
+                }
+            });
+            renderDonorWall();
+        }
+
+        // Tier Selection in Modal
+        function selectTier(amount, element) {
+            document.querySelectorAll('.tier-btn').forEach(btn => {
+                btn.className = "tier-btn py-2.5 rounded-xl border border-slate-200 font-bold text-slate-700 hover:border-amber-500 hover:bg-amber-50 transition text-sm";
+            });
+
+            element.className = "tier-btn active-tier bg-amber-500 text-slate-950 font-bold py-2.5 rounded-xl border border-amber-500 shadow-sm transition text-sm";
+
+            const customWrapper = document.getElementById('custom-amount-wrapper');
+            if (amount === 'custom') {
+                customWrapper.classList.remove('hidden');
+                selectedAmount = parseInt(document.getElementById('custom-amount-input').value) || 0;
+            } else {
+                customWrapper.classList.add('hidden');
+                selectedAmount = amount;
+            }
+        }
+
+        // Open Donation Modal
+        function openDonationModal() {
+            const modal = document.getElementById('donation-modal');
+            const card = document.getElementById('modal-card');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                card.classList.remove('scale-95', 'opacity-0');
+                card.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        // Close Donation Modal
+        function closeDonationModal() {
+            const modal = document.getElementById('donation-modal');
+            const card = document.getElementById('modal-card');
+            card.classList.remove('scale-100', 'opacity-100');
+            card.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 200);
+        }
+
+        // Quick Donate Button from Hero Card
+        function quickDonate(amount) {
+            openDonationModal();
+            const btn = Array.from(document.querySelectorAll('.tier-btn')).find(b => b.textContent.includes(amount));
+            if (btn) selectTier(amount, btn);
+        }
+
+        // Form Submit Handler
+        function handleDonationSubmit(event) {
+            event.preventDefault();
+
+            if (document.getElementById('custom-amount-wrapper').classList.contains('hidden') === false) {
+                selectedAmount = parseInt(document.getElementById('custom-amount-input').value) || 0;
+            }
+
+            if (!selectedAmount || selectedAmount <= 0) {
+                showToast("Please enter a valid donation amount.");
+                return;
+            }
+
+            const name = document.getElementById('donor-name').value.trim();
+            const badge = document.getElementById('donor-category').value;
+            const message = document.getElementById('donor-message').value.trim();
+            const utr = document.getElementById('transaction-id').value.trim();
+
+            if (!name || !utr) {
+                showToast("Please fill in required fields.");
+                return;
+            }
+
+            // Update local state
+            const newDonor = {
+                name: name,
+                amount: selectedAmount,
+                badge: badge,
+                message: message || "Hearty wishes to all freshers!",
+                date: new Date().toISOString().split('T')[0]
+            };
+
+            campaignState.raisedAmount += selectedAmount;
+            campaignState.donors.unshift(newDonor);
+
+            saveState();
+            updateCampaignUI();
+            renderDonorWall();
+
+            closeDonationModal();
+
+            // Populate and Show Receipt
+            showReceipt(newDonor, utr);
+            showToast("Donation registered successfully! Thank you.");
+            document.getElementById('donation-form').reset();
+        }
+
+        // Show PDF / Printable Receipt Modal
+        function showReceipt(donor, utr) {
+            const receiptModal = document.getElementById('receipt-modal');
+            const receiptNo = "#MSM-" + Math.floor(1000 + Math.random() * 9000);
+            
+            document.getElementById('receipt-amount').innerText = "₹" + donor.amount.toLocaleString('en-IN');
+            document.getElementById('receipt-no').innerText = receiptNo;
+            document.getElementById('receipt-date').innerText = new Date().toLocaleDateString('en-IN');
+            document.getElementById('receipt-donor').innerText = donor.name;
+            document.getElementById('receipt-badge').innerText = donor.badge;
+            document.getElementById('receipt-utr').innerText = utr;
+            document.getElementById('receipt-message-display').innerText = `"${donor.message}"`;
+
+            receiptModal.classList.remove('hidden');
+        }
+
+        function closeReceiptModal() {
+            document.getElementById('receipt-modal').classList.add('hidden');
+        }
+
+        // Download Receipt PDF using html2pdf
+        function downloadReceiptPDF() {
+            const element = document.getElementById('printable-receipt');
+            const opt = {
+                margin:       10,
+                filename:     'Molsom_Fresher_Meet_Donation_Receipt.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2 },
+                jsPDF:        { unit: 'mm', format: 'a5', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+
+        // Toast Notification Helper
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').innerText = msg;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3000);
+        }
+
+        // XSS sanitization helper
+        function escapeHtml(str) {
+            return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', initApp);
+    </script>
+</body>
+</html>
